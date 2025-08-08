@@ -23,3 +23,26 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// cypress/support/commands.js
+
+//Here we define a custom command for logging in users based on their roles.
+// The user data is stored in a fixture file named 'users.json'.
+Cypress.Commands.add('login', (role) => {
+  // Input the users data from the fixture
+  cy.fixture('users').then((users) => {
+    const user = users[role];
+
+    if (!user) {
+      throw new Error(`El rol "${role}" no existe en el fixture de usuarios.`);
+    }
+
+    // Login access
+    cy.visit('/login'); 
+
+    // Interacting with the login form
+    cy.get('input[name="email"]').type(user.username);
+    cy.get('input[name="password"]').type(user.password);
+    cy.get('button[type="submit"]').click();
+  });
+});

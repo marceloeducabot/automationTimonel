@@ -1,0 +1,26 @@
+
+//Here goes the users credentials accordiong to the role. User email and passsord are used to login.
+
+//Admin
+//Pedagogico
+//Supervisor
+//Legal
+
+{
+  "admin": {
+    "username": "admin@automation.com",
+    "password": "PasswordAdmin123"
+  },
+  "pedagogico": {
+    "username": "pedagogico@automation.com",
+    "password": "PasswordPedagogico123"
+  },
+  "supervisor": {
+    "username": "supervisor@automation.com",
+    "password": "PassowrdSupervisor123"
+  },
+  "legal": {
+    "username": "legal@automation.com",
+    "password": "PassowrdLegal123"
+  }
+}
