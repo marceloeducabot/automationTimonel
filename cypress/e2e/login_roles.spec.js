@@ -13,6 +13,18 @@ let documentosMenu=
 let personasMenu=
 let programasMenu=
 
+//Home menu selector for every role.
+//Pedagogico role
+let iniciarTramiteBtn=
+let nuevaConsultaBtn=
+let instructivosBtn=
+let irAAgendaBtn=
+
+let iniciadosComponent=
+let enSeguimientoComponent=
+let pendientesComponent=
+
+
 describe('Happy path login by using valid credentials according the role', () => {
 
   // TC for Admin role
