@@ -1,9 +1,11 @@
 /cypress/e2e/login_roles.cy.js
 
 //Here we store the selectors to be used in the tests.
-let bueBtn=
-let contConEmailBtn=
+let bueBtn= '//*[@id="root"]/div/div[1]/div/div/div[2]/button'
+let contConEmailBtn= '//*[@id="root"]/div/div[1]/div/div/div[2]/div[1]/button'
 let invitadoExternoBtn=
+let homeText='//*[@id="root"]/div/div[1]/div/div/div[1]/h1'
+
 
 //left menu selectors
 let inicioMenu=
@@ -15,14 +17,17 @@ let programasMenu=
 
 //Home menu selector for every role.
 //Pedagogico role
-let iniciarTramiteBtn=
-let nuevaConsultaBtn=
-let instructivosBtn=
-let irAAgendaBtn=
+let iniciarTramiteBtn= '//*[@id="root"]/div/main/div[2]/div[2]/div/div[1]/div[1]/div/div/div[1]'
+let nuevaConsultaBtn= '//*[@id="root"]/div/main/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]'
+let instructivosBtn= '//*[@id="root"]/div/main/div[2]/div[2]/div/div[1]/div[1]/div/div/div[3]'
+let irAAgendaBtn= '//*[@id="root"]/div/main/div[2]/div[2]/div/div[2]/div[1]/button'
 
-let iniciadosComponent=
-let enSeguimientoComponent=
-let pendientesComponent=
+let iniciadosComponent= '//*[@id="root"]/div/main/div[2]/div[2]/div/div[1]/div[3]/div[1]/button'
+let enSeguimientoComponent= '//*[@id="root"]/div/main/div[2]/div[2]/div/div[1]/div[3]/div[2]/button'
+let pendientesComponent= '//*[@id="root"]/div/main/div[2]/div[2]/div/div[1]/div[3]/div[3]/button'
+
+// Supervisor role
+let 
 
 
 describe('Happy path login by using valid credentials according the role', () => {
