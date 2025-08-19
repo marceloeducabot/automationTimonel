@@ -31,6 +31,7 @@ let pendientesComponent= '//*[@id="root"]/div/main/div[2]/div[2]/div/div[1]/div[
 let tramitesARevisarTxt= '//*[@id="root"]/div/main/div[2]/div[2]/div/div[1]/div[1]/h2'
 let proxVisitasTxt= '//*[@id="root"]/div/main/div[2]/div[2]/div[2]/div[2]/div[1]/h1'
 let irALaAgendaLink= '//*[@id="root"]/div/main/div[2]/div[2]/div[2]/div[2]/div[1]/span'
+let agendarNuevaVisitaBtn= '//*[@id="root"]/div/main/div[2]/div[2]/div[2]/div[2]/div[1]/button'
 
 
 
