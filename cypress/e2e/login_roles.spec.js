@@ -3,17 +3,18 @@
 //Here we store the selectors to be used in the tests.
 let bueBtn= '//*[@id="root"]/div/div[1]/div/div/div[2]/button'
 let contConEmailBtn= '//*[@id="root"]/div/div[1]/div/div/div[2]/div[1]/button'
-let invitadoExternoBtn=
+//let invitadoExternoBtn=
 let homeText='//*[@id="root"]/div/div[1]/div/div/div[1]/h1'
 
 
 //left menu selectors
-let inicioMenu=
+/*let inicioMenu= 
 let agendaMenu=
 let tramitesMenu=
 let documentosMenu=
 let personasMenu=
 let programasMenu=
+*/
 
 //Home menu selector for every role.
 //Pedagogico role
@@ -27,7 +28,10 @@ let enSeguimientoComponent= '//*[@id="root"]/div/main/div[2]/div[2]/div/div[1]/d
 let pendientesComponent= '//*[@id="root"]/div/main/div[2]/div[2]/div/div[1]/div[3]/div[3]/button'
 
 // Supervisor role
-let 
+let tramitesARevisarTxt= '//*[@id="root"]/div/main/div[2]/div[2]/div/div[1]/div[1]/h2'
+let proxVisitasTxt= '//*[@id="root"]/div/main/div[2]/div[2]/div[2]/div[2]/div[1]/h1'
+let irALaAgendaLink= '//*[@id="root"]/div/main/div[2]/div[2]/div[2]/div[2]/div[1]/span'
+
 
 
 describe('Happy path login by using valid credentials according the role', () => {
