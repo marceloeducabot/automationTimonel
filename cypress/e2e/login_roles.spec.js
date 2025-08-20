@@ -1,10 +1,14 @@
 /cypress/e2e/login_roles.cy.js
 
-//Here we store the selectors to be used in the tests.
+const usuario = Cypress.env('username');
+const contrasena = Cypress.env('password');
+
+//Here we store the selectors to be used in the tests------------------------------------------------------
 let bueBtn= '//*[@id="root"]/div/div[1]/div/div/div[2]/button'
 let contConEmailBtn= '//*[@id="root"]/div/div[1]/div/div/div[2]/div[1]/button'
 //let invitadoExternoBtn=
 let homeText='//*[@id="root"]/div/div[1]/div/div/div[1]/h1'
+
 
 
 //left menu selectors
@@ -43,38 +47,62 @@ describe('Happy path login by using valid credentials according the role', () =>
     
     // Here we validate that the login was successful and some asserts. 
     cy.url().should('include', '/dashboard'); 
-    cy.contains('h1', 'Panel de Administración').should('be.visible');
+    cy.contains('h1', 'Actividades').should('be.visible');
     cy.contains('a', 'Gestionar Usuarios').should('be.visible');
   });
 
   // TC for Pedagogico rol
   it('This should allow to the Pedagogico role login successfully', () => {
-    cy.login('editor');
+    cy.login('pedagogico');
 
     // Here we validate that the login was successful and some asserts.
-    cy.url().should('include', '/content');
-    cy.contains('h1', 'Editor de Contenido').should('be.visible');
-    cy.contains('button', 'Publicar').should('be.visible');
-    cy.contains('button', 'Eliminar Usuario').should('not.exist');
+    cy.url().should('include', '/dashboard');
+    cy.contains('h1', 'Actividades').should('be.visible');
+    cy.contains('h1', 'Agenda').should('be.visible');
+    cy.contains('button', 'Iniciar trámite').should('be.visible');
+  });
+
+    // TC for Pedagogico rol without bue account
+  it('This should allow to the Pedagogico role login successfully without BUE', () => {
+    cy.visit('/login')
+    //cy.login('pedagogico');
+
+    // Llena el campo de usuario usando la constante
+    cy.get('#username').type(usuario);
+
+    // Llena el campo de contraseña usando la constante
+    cy.get('#password').type(contrasena);
+
+    // Envía el formulario de login
+    cy.get('form').submit();
+
+    // Verifica que la URL haya cambiado después del login
+    cy.url().should('include', '/dashboard');
+
+    // Here we validate that the login was successful and some asserts.
+    cy.url().should('include', '/dashboard');
+    cy.contains('h1', 'Actividades').should('be.visible');
+    cy.contains('h1', 'Agenda').should('be.visible');
+    cy.contains('button', 'Iniciar trámite').should('be.visible');
   });
 
   // TC for Supervisor role
   it('Here we validate that the login was successful and some asserts.', () => {
-    cy.login('viewer');
+    cy.login('supervisor');
 
     // Here we validate that the login was successful and some asserts.
-    cy.url().should('include', '/public-content');
-    cy.contains('h1', 'Contenido').should('be.visible');
-    cy.contains('button', 'Publicar').should('not.exist');
-    cy.contains('a', 'Gestionar Usuarios').should('not.exist');
+    cy.url().should('include', '/dashboard');
+    cy.contains('h1', 'Trámites a revisar').should('be.visible');
+    cy.contains('h1', 'Escuelas').should('be.visible');
+    cy.contains('h1', 'Próximas visitas').should('be.visible');
   });
 
     // TC for Legal role
   it('Here we validate that the login was successful and some asserts.', () => {
-    cy.login('viewer');
+    cy.login('legal');
 
     // Here we validate that the login was successful and some asserts.
-    cy.url().should('include', '/public-content');
+    cy.url().should('include', '/dashboard');
     cy.contains('h1', 'Contenido').should('be.visible');
     cy.contains('button', 'Publicar').should('not.exist');
     cy.contains('a', 'Gestionar Usuarios').should('not.exist');

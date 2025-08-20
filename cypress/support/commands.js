@@ -38,7 +38,7 @@ Cypress.Commands.add('login', (role) => {
     }
 
     // Login access
-    cy.visit('/login'); 
+    cy.visit('https://aprende-ba-staging.up.railway.app/login'); 
 
     // Interacting with the login form
     cy.get('input[name="email"]').type(user.username);
@@ -46,3 +46,15 @@ Cypress.Commands.add('login', (role) => {
     cy.get('button[type="submit"]').click();
   });
 });
+
+/* 
+testasi1@bue.edu.ar
+!3GaMEpF49SBmuH
+testasi2@bue.edu.ar
+7!RAvNdJf2KsMaD
+*//* 
+testasi1@bue.edu.ar
+!3GaMEpF49SBmuH
+testasi2@bue.edu.ar
+7!RAvNdJf2KsMaD
+*/
