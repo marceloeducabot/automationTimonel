@@ -6,6 +6,8 @@ Node v24.5.0
 Cypress 14.5.4
 npm	8.6.0
 pnpm	8.x
+cypress-mochawesome-reporter 4.0.2
+
 
 
 Cypress supports running under these operating systems:
