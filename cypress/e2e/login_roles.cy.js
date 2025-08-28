@@ -83,7 +83,10 @@ cy.wait(2000);
     
     
       // TC for Supervisor role
-      it('Here we validate that the login was successful and some asserts.', () => {
+      it.only('Successful login for Supervisor role.', () => {
+    cy.visit('/login');
+    cy.get('[data-testid="btn-login-email"] > [data-testid="button-label"]').click();
+    cy.wait(1000);  
     cy.get('[data-testid="input-email"]').type('supervisor@maildrop.cc');
     cy.get('[data-testid="input-password"]').type('Supervisor2025');
     cy.get('[data-testid="btn-submit-email"]').click();
